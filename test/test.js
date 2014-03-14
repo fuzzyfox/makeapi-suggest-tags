@@ -31,7 +31,7 @@ describe('makeapi-suggest-tags', function(){
 			});
 		});
 
-		describe('link to sinlge make (webmaker.keepcalm) in document', function(){
+		describe('link to single make (webmaker.keepcalm) in document', function(){
 			before(function(){
 				var container = document.getElementById('make-links');
 				
