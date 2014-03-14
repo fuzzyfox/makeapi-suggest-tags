@@ -26,8 +26,9 @@
     "makeapi-client": "git://github.com/mozilla/makeapi-client"
   },
   "devDependencies": {
-    "mocha": "~1.18.0",
     "chai": "~1.9.0",
-    "jsdom": "~0.10.2"
+    "jsdom": "~0.10.2",
+    "grunt-mocha-test": "~0.10.0",
+    "grunt": "~0.4.4"
   }
 }

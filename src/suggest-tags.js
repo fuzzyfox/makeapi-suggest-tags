@@ -37,13 +37,13 @@
         return;
       }
 
-      makes.forEach(function(make){
-        make.rawTags.forEach(function(tag){
+      makes.filter(function(make){
+        make.rawTags.filter(function(tag){
           // flag to indicate if tag already known
           var foundFlag = false;
 
           // check if current tag is known
-          foundTags.forEach(function(tagObj){
+          foundTags.filter(function(tagObj){
             if(tagObj.name === tag){
               foundFlag = true;
               tagObj.frequency++;
