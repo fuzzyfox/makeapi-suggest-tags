@@ -39,3 +39,18 @@ This example uses jsdom, but you can use whatever DOM implementation you wish.
 		</script>
 	</body>
 	</html>
+
+## Testing
+### In browser
+To test in browser you will need to run the following from your terminal:
+
+	npm install -g bower
+	bower install
+
+Then open `test/test.html` in your browser of choice.
+
+### On the commandline
+
+	npm install -g mocha
+	npm install
+	mocha

@@ -78,7 +78,7 @@
    * @param {Function} done  Callback to run once all async calls are complete and suggested tags known
    */
   function suggestTags(links, done){
-    Array.prototype.forEach.call(links, function(link){
+    Array.prototype.filter.call(links, function(link){
       linksToCheck++;
       getLinkTags(link, function(){
         if(--linksToCheck === 0){

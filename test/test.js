@@ -5,7 +5,9 @@ if(typeof module !== 'undefined' && module.exports){
 		fs          = require('fs'),
 		suggestTags = require('../index.js');
 
-	var document = jsdom(fs.readFileSync('test/test.html', {encoding: 'utf8'}));
+	var doc = fs.readFileSync('test/test.html', {encoding: 'utf8'});
+	doc = doc.replace(/<script(.*?)>(.*?)<\/script>/, '', 'ig');
+	var document = jsdom(doc);
 }
 // setup for browser w/ 
 else if(typeof window !== 'undefined'){
