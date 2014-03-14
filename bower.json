@@ -1,0 +1,27 @@
+{
+  "name": "makeapi-suggest-tags",
+  "main": "src/suggest-tags.js",
+  "version": "0.01",
+  "authors": [
+    "William Duyck <wduyck@mozillafoundation.org>"
+  ],
+  "description": "Gets suggested tags for a document based on pages it links to that are known to the MakeAPI.",
+  "keywords": [
+    "makeapi",
+    "mozilla",
+    "webmaker",
+    "tags"
+  ],
+  "license": "Mozilla Public License v2.0",
+  "homepage": "https://github.com/fuzzyfox/makeapi-suggest-tags.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "makeapi-client": "mozilla/makeapi-client#~0.5.18"
+  }
+}
