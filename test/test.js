@@ -45,7 +45,6 @@ describe('makeapi-suggest-tags', function(){
 					assert.isArray(tags);
 					assert.lengthOf(tags, 1);
 					assert.isObject(tags[0]);
-					console.log(tags);
 					assert.deepEqual(tags[0], {name:'keepcalm', frequency: 1});
 					done();
 				});
