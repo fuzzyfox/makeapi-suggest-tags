@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+	<title>Test</title>
+</head>
+<body>
+	<h1>makeapi-suggest-tags</h1>
+
+	<h2>mocha</h2>
+	<div id="mocha"></div>
+	
+	<h2>links to makes</h2>
+	<div id="make-links"></div>
+	
+	<script src="../bower_components/makeapi-client/src/make-api.js"></script>
+	<script src="../src/suggest-tags.js"></script>
+	<script src="../bower_components/chai/chai.js"></script>
+	<script src="../bower_components/mocha/mocha.js"></script>
+	<script>
+		mocha.setup('bdd');
+	</script>
+	<script src="./test.js"></script>
+	<script>
+		mocha.checkLeaks();
+		mocha.run();
+	</script>
+</body>
+</html>

@@ -23,5 +23,9 @@
   ],
   "dependencies": {
     "makeapi-client": "mozilla/makeapi-client#~0.5.18"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.0",
+    "chai": "~1.9.0"
   }
 }

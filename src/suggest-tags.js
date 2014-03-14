@@ -12,6 +12,7 @@
     script.onload = function(){
       root();
     };
+    window.suggestTags = function(){};
     document.head.appendChild(script);
     return;
   }
@@ -23,7 +24,7 @@
   /**
    * Gets any metadata about a link from the MakeAPI 
    * and adds any tags to the `foundTags` array w/ a 
-   * count of times its appeared
+   * frequency of times its appeared
    * 
    * @param  {HTMLAreaElement|HTMLAnchorElement}   link A HTMLElement w/ a href property that has a value
    * @param  {Function} done Callback to run once async call is complete
@@ -37,7 +38,7 @@
       }
 
       makes.forEach(function(make){
-        make.tags.forEach(function(tag){
+        make.rawTags.forEach(function(tag){
           // flag to indicate if tag already known
           var foundFlag = false;
 
@@ -45,7 +46,7 @@
           foundTags.forEach(function(tagObj){
             if(tagObj.name === tag){
               foundFlag = true;
-              tagObj.count++;
+              tagObj.frequency++;
             }
           });
 
@@ -53,7 +54,7 @@
           if(foundFlag === false){
             foundTags.push({
               name: tag,
-              count: 1
+              frequency: 1
             });
           }
         });
@@ -70,7 +71,7 @@
    *
    * [{
    *     name: String,
-   *     count: Number
+   *     frequency: Integer
    * }]
    * 
    * @param {HTMLCollection}   links Collection of all AREA elements and anchor (A) elements in a document with a value for the href attribute.
