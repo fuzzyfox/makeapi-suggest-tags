@@ -1,22 +1,32 @@
-/* global module, grunt */
 module.exports = function( grunt ) {
+  'use strict';
+
   grunt.initConfig({
-    pkg: grunt.file.readJSON( "package.json" ),
+    pkg: grunt.file.readJSON( 'package.json' ),
 
     jshint: {
+      // Options set based on http://mozweb.readthedocs.org/en/latest/js-style.html
       options: {
         strict: true,
-        newcap: false
+        curly: true,
+        newcap: true,
+        quotmark: 'single',
+        camelcase: true,
+        undef: true,
+        unused: true,
+        eqeqeq: true,
+        node: true,
+        browser: true
       },
       files: [
-        "Gruntfile.js",
-        "index.js",
-        "src/**/*.js",
+        'Gruntfile.js',
+        'index.js',
+        'src/**/*.js',
       ]
     }
   });
 
-  grunt.loadNpmTasks( "grunt-contrib-jshint" );
+  grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 
-  grunt.registerTask( "default", [ "jshint" ]);
+  grunt.registerTask( 'default', [ 'jshint' ]);
 };
