@@ -40,17 +40,14 @@ This example uses jsdom, but you can use whatever DOM implementation you wish.
 	</body>
 	</html>
 
-## Testing
-### In browser
-To test in browser you will need to run the following from your terminal:
+## Development
+Play nice:
 
-	npm install -g bower
-	bower install
+* remove trailing whitespace from files before save
+* don't use non-ascii file names
+* run grunt before commit (and make sure there are no errors)
 
-Then open `test/test.html` in your browser of choice.
+Do all this w/ ease!
 
-### On the commandline
-
-	npm install -g mocha
-	npm install
-	mocha
+	mv .git/hooks/pre-commit.sample .git/hooks/pre-commit
+	echo "\n# run grunt before commit, abort if errors\ngrunt" >> .git/hooks/pre-commit
