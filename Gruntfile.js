@@ -1,20 +1,22 @@
-module.exports = function(grunt) {
-
-  // Add the grunt-mocha-test tasks.
-  grunt.loadNpmTasks('grunt-mocha-test');
-
+/* global module, grunt */
+module.exports = function( grunt ) {
   grunt.initConfig({
-    // Configure a mochaTest task
-    mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec'
-        },
-        src: ['test/**/*.js']
-      }
+    pkg: grunt.file.readJSON( "package.json" ),
+
+    jshint: {
+      options: {
+        strict: true,
+        newcap: false
+      },
+      files: [
+        "Gruntfile.js",
+        "index.js",
+        "src/**/*.js",
+      ]
     }
   });
 
-  grunt.registerTask('default', 'mochaTest');
+  grunt.loadNpmTasks( "grunt-contrib-jshint" );
 
+  grunt.registerTask( "default", [ "jshint" ]);
 };

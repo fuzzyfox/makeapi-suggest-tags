@@ -17,7 +17,7 @@
     "tags"
   ],
   "author": "William Duyck <wduyck@mozillafoundation.org>",
-  "license": "Mozilla Public License v2.0",
+  "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/fuzzyfox/makeapi-suggest-tags/issues"
   },
@@ -26,9 +26,5 @@
     "makeapi-client": "git://github.com/mozilla/makeapi-client"
   },
   "devDependencies": {
-    "chai": "~1.9.0",
-    "jsdom": "~0.10.2",
-    "grunt-mocha-test": "~0.10.0",
-    "grunt": "~0.4.4"
   }
 }

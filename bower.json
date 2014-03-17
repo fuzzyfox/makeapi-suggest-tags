@@ -12,7 +12,7 @@
     "webmaker",
     "tags"
   ],
-  "license": "Mozilla Public License v2.0",
+  "license": "MPL-2.0",
   "homepage": "https://github.com/fuzzyfox/makeapi-suggest-tags.git",
   "ignore": [
     "**/.*",
@@ -25,7 +25,5 @@
     "makeapi-client": "mozilla/makeapi-client#~0.5.18"
   },
   "devDependencies": {
-    "mocha": "~1.18.0",
-    "chai": "~1.9.0"
   }
 }
