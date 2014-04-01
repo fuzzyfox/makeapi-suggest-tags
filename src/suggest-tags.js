@@ -21,6 +21,7 @@
 
   var foundTags = [],
     linksToCheck = 0,
+    running = false,
     makeapi;
 
   /**
@@ -84,14 +85,32 @@
    * @param {Function} done  Callback to run once all async calls are complete and suggested tags known
    */
   function suggestTags( links, done ){
-    Array.prototype.filter.call( links, function( link ) {
-      linksToCheck++;
-      getLinkTags(link, function(){
-        if ( --linksToCheck === 0 ) {
-          done( foundTags );
-        }
+    if ( !running ) {
+      Array.prototype.filter.call( links, function( link ) {
+        linksToCheck++;
+        getLinkTags(link, function(){
+          if ( --linksToCheck === 0 ) {
+            done( foundTags );
+
+            // reset some variables after complete
+            foundTags = [];
+            linksToCheck = 0;
+            running = false;
+          }
+        });
       });
-    });
+
+      if ( !links.length ) {
+        done( [] );
+      }
+    }
+    // dirty hack till refactor
+    // mimics desired behaviour better however
+    else {
+      setTimeout( function() {
+        suggestTags( links, done );
+      }, 10);
+    }
   }
 
   // AMD context
