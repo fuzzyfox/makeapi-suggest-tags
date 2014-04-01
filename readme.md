@@ -7,11 +7,11 @@ This example uses jsdom, but you can use whatever DOM implementation you wish.
 
 	var suggestTags = require('makeapi-suggest-tags').suggestTags,
 		jsdom = require('jsdom');
-	
+
 	var doSomething = function(arrayOfTagObjects){
-		// doSomething with arrayOfTagObjects 
+		// doSomething with arrayOfTagObjects
 	};
-	
+
 	jsdom.env({
 		url: 'http://www.example.com/',
 		done: function(errors, window){
@@ -32,7 +32,7 @@ This example uses jsdom, but you can use whatever DOM implementation you wish.
 		<script src="path/to/suggest-tags.js"></script>
 		<script>
 			var doSomething = function(arrayOfTagObjects){
-				// doSomething with arrayOfTagObjects 
+				// doSomething with arrayOfTagObjects
 			};
 
 			suggestTags(document.links, doSomething);
@@ -51,3 +51,6 @@ Do all this w/ ease!
 
 	mv .git/hooks/pre-commit.sample .git/hooks/pre-commit
 	echo "\n# run grunt before commit, abort if errors\ngrunt" >> .git/hooks/pre-commit
+
+### Additional before pull request
+Run `test/run_tests.html` in your browser and ensure that all tests pass. This improves you chance of the request being approved.
